@@ -5,19 +5,19 @@ def check_fields(fields):
     return("byr" in fields and "iyr" in fields and "eyr" in fields and "hgt" in fields and "hcl" in fields and "ecl" in fields and "pid" in fields)
 
 def check_byr(byr):
-    return(re.search(r"^\d{4}$", byr) is not None and int(byr) >=1920 and int(byr)<= 2002)
+    return(re.search(r"^\d{4}$", byr) is not None and 1920 <= int(byr) <= 2002)
 
 def check_iyr(iyr):
-    return(re.search(r"^\d{4}$", iyr) is not None and int(iyr) >=2010 and int(iyr)<= 2020)
+    return(re.search(r"^\d{4}$", iyr) is not None and 2010 <=int(iyr)<= 2020)
 
 def check_eyr(eyr):
-    return(re.search(r"^\d{4}$", eyr) is not None and int(eyr) >=2020 and int(eyr)<= 2030)
+    return(re.search(r"^\d{4}$", eyr) is not None and 2020 <=int(eyr)<= 2030)
 
 def check_hgt(hgt):
     if hgt[-2:] == 'in' :
-        return (re.search(r"^\d{2}$", hgt[:-2]) is not None and int(hgt[:-2]) >=59 and int(hgt[:-2]) <=76)
+        return (re.search(r"^\d{2}$", hgt[:-2]) is not None and 59 <= int(hgt[:-2]) <=76)
     elif hgt[-2:] == 'cm':
-        return (re.search(r"^\d{3}$", hgt[:-2]) is not None and int(hgt[:-2]) >=150 and int(hgt[:-2]) <=193)
+        return (re.search(r"^\d{3}$", hgt[:-2]) is not None and 150 <= int(hgt[:-2]) <=193)
     else : return(False)
 
 def check_hcl(hcl):
